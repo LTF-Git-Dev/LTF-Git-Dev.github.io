@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LP — notes, calendar and boards on your Mac</title>
+<meta name="description" content="LP is a calm Mac app for notes, calendars and project boards on your own Markdown files.">
+<link rel="icon" href="icon.png">
+<style>
+:root { color-scheme: light dark; --ink:#1d1d1f; --ink2:#55555c; --ink3:#86868b; --canvas:#ffffff;
+  --panel:#f5f5f7; --line:#e3e3e8; --accent:#0a66d8; }
+@media (prefers-color-scheme: dark) { :root { --ink:#f2f2f4; --ink2:#b4b4bb; --ink3:#8c8c93;
+  --canvas:#161617; --panel:#1f1f21; --line:#333336; --accent:#4c9bff; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--canvas); color: var(--ink); font: 16px/1.6 -apple-system,
+  BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; }
+header, main, footer { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 20px;
+  padding-bottom: 20px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 600; font-size: 17px; }
+.brand:hover { text-decoration: none; }
+nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 14px; } nav a { color: var(--ink2); }
+main { padding-top: 36px; padding-bottom: 48px; }
+h1 { font-size: 34px; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 8px; }
+h2 { font-size: 22px; letter-spacing: -0.01em; margin: 40px 0 10px; }
+h3 { font-size: 18px; margin: 28px 0 8px; } h4 { font-size: 16px; margin: 22px 0 6px; }
+p, li { color: var(--ink); } ul { padding-left: 22px; } li { margin: 6px 0; } li > ul { margin: 6px 0; }
+li p { margin: 6px 0 0; }
+code { font: 0.88em ui-monospace, "SF Mono", Menlo, monospace; background: var(--panel);
+  border: 1px solid var(--line); border-radius: 5px; padding: 1px 5px; }
+.table { overflow-x: auto; margin: 16px 0; }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+th, td { text-align: left; vertical-align: top; padding: 9px 10px; border-bottom: 1px solid var(--line); }
+th { color: var(--ink2); font-weight: 600; }
+.lead { font-size: 20px; color: var(--ink2); margin: 0 0 28px; }
+.hero { display: flex; align-items: center; gap: 22px; margin-bottom: 8px; }
+.hero img { width: 96px; height: 96px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 24px 0; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+.card h3 { margin: 0 0 6px; font-size: 16px; } .card p { margin: 0; color: var(--ink2); font-size: 14.5px; }
+.note { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 4px 20px; margin: 20px 0; }
+pre { white-space: pre-wrap; font: 13.5px/1.55 ui-monospace, "SF Mono", Menlo, monospace; }
+footer { padding-top: 18px; padding-bottom: 40px; border-top: 1px solid var(--line); color: var(--ink3); font-size: 13.5px; }
+footer a { color: var(--ink2); }
+@media (max-width: 540px) { h1 { font-size: 28px; } .hero img { width: 72px; height: 72px; } .lead { font-size: 18px; } }
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="./"><img src="icon.png" alt="" width="28" height="28">LP</a>
+  <nav><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="connected-accounts.html">Connected accounts</a><a href="security.html">Security</a></nav>
+</header>
+<main>
+<div class="hero"><img src="icon.png" alt="LP's app icon">
+<div><h1>LP</h1><p class="lead">A calm Mac app for your notes, your calendar and your project boards — on plain
+Markdown files in a folder you choose.</p></div></div>
+
+<div class="cards">
+<div class="card"><h3>Notes</h3><p>A clean editor over your own Markdown files, compatible with Obsidian. Nothing is
+uploaded: the files stay where you keep them.</p></div>
+<div class="card"><h3>Calendar</h3><p>Your Apple, Google and Outlook calendars next to your notes, two-way: events you
+create or change in LP are saved back to the calendar they belong to.</p></div>
+<div class="card"><h3>Boards</h3><p>Kanban boards stored as Markdown, with progress tracking — and, if you choose, a
+read-only progress page you can share with a link.</p></div>
+</div>
+
+<h2>How LP uses your Google and Microsoft data</h2>
+<p>LP connects to Google or Microsoft only when you click <strong>Connect</strong> and approve on their own page. Every
+request goes straight from your Mac to them: LP has <strong>no servers, no accounts, no analytics and no ads</strong>, and
+the people who make LP never receive your data or your sign-in, which stays in your Mac's Keychain.</p>
+<ul>
+<li><strong>Google Calendar</strong> — <code>calendar.calendarlist.readonly</code> to show the list of your calendars,
+and <code>calendar.events</code> to show your events in LP and to create, change or delete events when you do so in LP.
+LP keeps a copy of a year back to two years ahead on your Mac, so your calendar works offline.</li>
+<li><strong>Google Drive</strong> (only if you choose to share a board there) — <code>drive.file</code>: LP creates,
+updates and deletes the progress pages you share, as Google Docs in your own Drive. It can't see or change any other
+file in your Drive.</li>
+<li><strong>Microsoft Outlook</strong> — <code>Calendars.ReadWrite</code> and <code>offline_access</code>, to show and
+edit your calendars' events in LP and stay connected.</li>
+</ul>
+<div class="note"><p>LP's use and transfer of information received from Google APIs adheres to the
+<a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+including the Limited Use requirements. Your data is used only to show and edit your calendar in LP on your Mac and to
+publish the board pages you choose to share; it is never sold, never transferred to anyone else, never used for
+advertising, and never read by people.</p></div>
+<p>Disconnecting an account in LP removes LP's copy and asks Google to end LP's access; you can also remove LP's
+access any time in your Google or Microsoft account settings. Read the <a href="privacy.html">Privacy Policy</a>,
+the <a href="terms.html">Terms of Use</a> and <a href="connected-accounts.html">what each connected account allows</a>.</p>
+
+<h2>Get LP</h2>
+<p>LP runs on macOS 15 and later. It is free, and its code is under the MIT License.</p>
+<p>Questions or problems: <a href="mailto:ltf.dev.supp@gmail.com">ltf.dev.supp@gmail.com</a>.</p>
+</main>
+<footer>
+  © 2026 LTF-Git-Dev · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> ·
+  <a href="cookies.html">Cookie Policy</a> · <a href="license.html">MIT License</a>
+</footer>
+</body>
+</html>
