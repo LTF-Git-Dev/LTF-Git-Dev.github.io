@@ -20,7 +20,7 @@
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="icon.png" type="image/png">
 <link rel="apple-touch-icon" href="icon.png">
-<link rel="stylesheet" href="assets/site.css?v=943d316f46">
+<link rel="stylesheet" href="assets/site.css?v=8b05e4d30b">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -55,7 +55,7 @@
 <h2 id="when-a-service-asks-lp-to-slow-down">When a service asks LP to slow down</h2>
 <p>Google, Microsoft and GitHub limit how often an app may call them. If one of them answers "too many requests", LP waits as long as it asks — at most an hour — before calling it again, and says so:</p>
 <ul><li><strong>Calendar:</strong> Settings → Calendars shows "The calendar service asked LP to slow down. Please wait until …" next to the account. Nothing is sent to that account until then: a sync under way stops, and a change you try meanwhile is turned down at once (LP says so and puts the event back). LP syncs the account again by itself afterwards.</li><li><strong>Sharing:</strong> the progress panel shows "GitHub asked LP to slow down. Please wait until …". Nothing is sent to GitHub with that token until then, for any board (another token, for another account, isn't held up). Automatic updates try again a few times, each waiting longer; after that your next change, or Update Now, brings the page up to date.</li></ul>
-<p>You don't need to do anything. Normally this never happens: LP syncs about every 5 minutes while it is in front (a full sync at most every half hour) and updates a shared page once, 4 seconds after the last change.</p>
+<p>For calendars you don't need to do anything. A shared page catches up by itself too, unless the service keeps asking LP to wait: then the progress panel says automatic updates are paused, and your next change or <strong>Update Now</strong> brings the page up to date. Normally none of this happens: LP syncs about every 5 minutes while it is in front (a full sync at most every half hour) and updates a shared page once, 4 seconds after the last change.</p>
 <h2 id="the-risks-plainly">The risks, plainly</h2>
 <ul><li><strong>A connected account works on this Mac.</strong> Anyone who can use your unlocked Mac account can use LP and see your calendar. Lock your Mac and keep FileVault on.</li><li><strong>Tokens last until revoked.</strong> They are encrypted in the Keychain, but if your Mac account is compromised they could be used. Disconnecting removes them; revoking at the source (links above) makes sure.</li><li><strong>Events in the cache</strong> are protected by your Mac login and FileVault, like your other files.</li><li><strong>Reminders and widgets</strong> show event and task titles on screen, including notification banners; choose in System Settings → Notifications whether they appear on the lock screen.</li><li><strong>A shared link can be passed on.</strong> Treat a shared board like anything else you publish.</li><li><strong>Sign-in privacy depends on your default browser.</strong> LP asks for a private sign-in session; Safari honours it, other browsers may not.</li><li><strong>Widget data:</strong> when LP is signed with your team, it keeps today's tasks and the next events (title, time, place) in <code>~/Library/Group Containers/&lt;team ID&gt;.LTF.Local-Productivity/</code> for the widgets — whether or not you have added a widget. Disconnecting an account removes its events there too.</li></ul>
 <h2 id="for-developers">For developers</h2>

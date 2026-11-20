@@ -195,7 +195,7 @@ main:focus { outline: none; }
 }
 .tile-media img.shot-progress { max-width: min(100%, 315px); }
 .tile-media img.shot-slash { max-width: min(100%, 284px); border-radius: 11px; }
-.tile-media img.shot-widget { max-width: min(100%, 362px); border-radius: 23px; }
+.tile-media img.shot-search { max-width: min(100%, 560px); border-radius: 12px; }
 @media (min-width: 700px) { .tile { grid-column: span 6; } }
 @media (min-width: 900px) {
   .tile { height: clamp(500px, 44vw, 580px); }
