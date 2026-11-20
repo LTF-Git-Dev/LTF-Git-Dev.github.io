@@ -3,95 +3,89 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy — LP</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Privacy Policy · LP</title>
 <meta name="description" content="LP&#x27;s privacy policy.">
-<link rel="icon" href="icon.png">
-<style>
-:root { color-scheme: light dark; --ink:#1d1d1f; --ink2:#55555c; --ink3:#86868b; --canvas:#ffffff;
-  --panel:#f5f5f7; --line:#e3e3e8; --accent:#0a66d8; }
-@media (prefers-color-scheme: dark) { :root { --ink:#f2f2f4; --ink2:#b4b4bb; --ink3:#8c8c93;
-  --canvas:#161617; --panel:#1f1f21; --line:#333336; --accent:#4c9bff; } }
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--canvas); color: var(--ink); font: 16px/1.6 -apple-system,
-  BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; }
-header, main, footer { max-width: 760px; margin: 0 auto; padding: 0 24px; }
-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 20px;
-  padding-bottom: 20px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
-.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 600; font-size: 17px; }
-.brand:hover { text-decoration: none; }
-nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 14px; } nav a { color: var(--ink2); }
-main { padding-top: 36px; padding-bottom: 48px; }
-h1 { font-size: 34px; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 8px; }
-h2 { font-size: 22px; letter-spacing: -0.01em; margin: 40px 0 10px; }
-h3 { font-size: 18px; margin: 28px 0 8px; } h4 { font-size: 16px; margin: 22px 0 6px; }
-p, li { color: var(--ink); } ul { padding-left: 22px; } li { margin: 6px 0; } li > ul { margin: 6px 0; }
-li p { margin: 6px 0 0; }
-code { font: 0.88em ui-monospace, "SF Mono", Menlo, monospace; background: var(--panel);
-  border: 1px solid var(--line); border-radius: 5px; padding: 1px 5px; }
-.table { overflow-x: auto; margin: 16px 0; }
-table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
-th, td { text-align: left; vertical-align: top; padding: 9px 10px; border-bottom: 1px solid var(--line); }
-th { color: var(--ink2); font-weight: 600; }
-.lead { font-size: 20px; color: var(--ink2); margin: 0 0 28px; }
-.hero { display: flex; align-items: center; gap: 22px; margin-bottom: 8px; }
-.hero img { width: 96px; height: 96px; }
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 24px 0; }
-.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
-.card h3 { margin: 0 0 6px; font-size: 16px; } .card p { margin: 0; color: var(--ink2); font-size: 14.5px; }
-.note { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 4px 20px; margin: 20px 0; }
-pre { white-space: pre-wrap; font: 13.5px/1.55 ui-monospace, "SF Mono", Menlo, monospace; }
-footer { padding-top: 18px; padding-bottom: 40px; border-top: 1px solid var(--line); color: var(--ink3); font-size: 13.5px; }
-footer a { color: var(--ink2); }
-@media (max-width: 540px) { h1 { font-size: 28px; } .hero img { width: 72px; height: 72px; } .lead { font-size: 18px; } }
-</style>
+<link rel="canonical" href="https://ltf-git-dev.github.io/privacy.html">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0e10" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LP">
+<meta property="og:title" content="Privacy Policy · LP">
+<meta property="og:description" content="LP&#x27;s privacy policy.">
+<meta property="og:url" content="https://ltf-git-dev.github.io/privacy.html">
+<meta property="og:image" content="https://ltf-git-dev.github.io/icon.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="icon.png" type="image/png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="stylesheet" href="assets/site.css?v=943d316f46">
 </head>
 <body>
-<header>
-  <a class="brand" href="./"><img src="icon.png" alt="" width="28" height="28">LP</a>
-  <nav><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="connected-accounts.html">Connected accounts</a><a href="security.html">Security</a></nav>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="top">
+  <div class="wrap header-row">
+    <a class="brand" href="./"><img src="icon.png" width="30" height="30" alt=""><span>LP</span></a>
+    <nav class="site-nav" aria-label="Main"><a href="./#features">Features</a><a href="./#data">Your data</a><a href="privacy.html" aria-current="page">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a></nav>
+  </div>
 </header>
-<main>
-<h1>Privacy Policy</h1>
-<p><em>Last updated: 20 November 2026 · applies to LP 1.0.1 and later</em></p>
-<h2>The short version</h2>
+<main id="main" tabindex="-1">
+<header class="doc-head"><div class="wrap"><h1>Privacy Policy</h1><p class="doc-meta">Last updated: 20 November 2026 · applies to LP 1.0.1 and later</p></div></header>
+<div class="wrap doc-layout has-toc"><nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li><a href="#the-short-version">The short version</a></li><li><a href="#who-this-is-about">Who this is about</a></li><li><a href="#what-lp-keeps-and-where">What LP keeps, and where</a></li><li><a href="#connected-calendar-accounts">Connected calendar accounts</a></li><li><a href="#sharing-a-board">Sharing a board</a></li><li><a href="#only-the-data-that-s-needed">Only the data that&#x27;s needed</a></li><li><a href="#cookies">Cookies</a></li><li><a href="#security">Security</a></li><li><a href="#your-choices">Your choices</a></li><li><a href="#google-api-data">Google API data</a></li><li><a href="#children">Children</a></li><li><a href="#changes">Changes</a></li><li><a href="#contact">Contact</a></li></ol></nav><article class="prose">
+<h2 id="the-short-version">The short version</h2>
 <ul><li><strong>LP has no servers, no accounts, no analytics, no ads and no tracking.</strong> Nobody — including the people who make LP — receives your notes, boards, calendar or anything about how you use it.</li><li><strong>Your notes and boards are files in a folder you choose, on your Mac.</strong> LP reads and writes them there and nowhere else.</li><li><strong>LP only goes online when you ask it to:</strong> to sync the calendar accounts you connect (Google, Microsoft) and to publish a board's progress page when you share one — to your own Google Drive or GitHub. Apple Calendar never leaves your Mac through LP.</li><li><strong>LP takes only what it needs</strong> for each of those, keeps it on your Mac, and lets you remove it.</li></ul>
-<h2>Who this is about</h2>
+<h2 id="who-this-is-about">Who this is about</h2>
 <p>LP is free, open-source software (MIT License) that runs entirely on your Mac. It is not a service: there is no "LP company" or server that collects or stores data. When you connect Google, Microsoft or GitHub, LP talks to them <strong>directly from your Mac</strong>, with credentials that belong to you. Those companies handle the data they hold under their own privacy policies: <a href="https://policies.google.com/privacy">Google</a> · <a href="https://privacy.microsoft.com/privacystatement">Microsoft</a> · <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub</a> · <a href="https://www.apple.com/legal/privacy/">Apple</a>.</p>
-<h2>What LP keeps, and where</h2>
+<h2 id="what-lp-keeps-and-where">What LP keeps, and where</h2>
 <p>Everything below stays on your Mac.</p>
-<div class="table"><table><thead><tr><th>What</th><th>Where</th><th>Why</th></tr></thead><tbody><tr><td>Your notes and boards</td><td><code>.md</code> files in your workspace folder</td><td>They are your documents</td></tr><tr><td>Board history (activity, daily totals, the shared-page record)</td><td>A hidden <code>.lp</code> folder in your workspace</td><td>Progress tracking</td></tr><tr><td>Copies of edits that couldn't be saved</td><td>LP's own <em>Recovered</em> folder (in LP's container, never your workspace)</td><td>So you never lose work</td></tr><tr><td>Events from Google and Microsoft (a year back to two years ahead, plus months you open)</td><td><code>calendar-cache.json</code> in LP's container</td><td>So your calendar is there offline; kept in sync while online, removed when you disconnect</td></tr><tr><td>Calendar and GitHub sign-in tokens</td><td>Your Mac's Keychain (encrypted by macOS)</td><td>To stay connected</td></tr><tr><td>Settings, workspace bookmarks, which shared pages this Mac may update</td><td>LP's preferences</td><td>To remember your choices</td></tr><tr><td>Which Google Docs in your Drive this Mac made or keeps up to date, by account</td><td>LP's preferences</td><td>So disconnecting the account can delete them first</td></tr><tr><td>Reminders</td><td>macOS notifications, scheduled on your Mac</td><td>To remind you</td></tr><tr><td>Widget data (today's tasks, the next events from every calendar — Apple's too — and board progress)</td><td><code>~/Library/Group Containers/&lt;team ID&gt;.LTF.Local-Productivity/</code>, only when LP is signed with your team</td><td>To draw the widgets</td></tr></tbody></table></div>
+<div class="table" role="region" aria-label="Table" tabindex="0"><table><thead><tr><th scope="col">What</th><th scope="col">Where</th><th scope="col">Why</th></tr></thead><tbody><tr><td>Your notes and boards</td><td><code>.md</code> files in your workspace folder</td><td>They are your documents</td></tr><tr><td>Board history (activity, daily totals, the shared-page record)</td><td>A hidden <code>.lp</code> folder in your workspace</td><td>Progress tracking</td></tr><tr><td>Copies of edits that couldn't be saved</td><td>LP's own <em>Recovered</em> folder (in LP's container, never your workspace)</td><td>So you never lose work</td></tr><tr><td>Events from Google and Microsoft (a year back to two years ahead, plus months you open)</td><td><code>calendar-cache.json</code> in LP's container</td><td>So your calendar is there offline; kept in sync while online, removed when you disconnect</td></tr><tr><td>Calendar and GitHub sign-in tokens</td><td>Your Mac's Keychain (encrypted by macOS)</td><td>To stay connected</td></tr><tr><td>Settings, workspace bookmarks, which shared pages this Mac may update</td><td>LP's preferences</td><td>To remember your choices</td></tr><tr><td>Which Google Docs in your Drive this Mac made or keeps up to date, by account</td><td>LP's preferences</td><td>So disconnecting the account can delete them first</td></tr><tr><td>Reminders</td><td>macOS notifications, scheduled on your Mac</td><td>To remind you</td></tr><tr><td>Widget data (today's tasks, the next events from every calendar — Apple's too — and board progress)</td><td><code>~/Library/Group Containers/&lt;team ID&gt;.LTF.Local-Productivity/</code>, only when LP is signed with your team</td><td>To draw the widgets</td></tr></tbody></table></div>
 <p>LP's container is <code>~/Library/Containers/LTF.Local-Productivity/</code>. Apple Calendar events aren't copied into LP's calendar cache: LP reads them from macOS when it needs them. (When LP is signed with your team, the widgets' data holds the next few events, from every calendar, so widgets can show them — kept up to date, also when an account is disconnected.)</p>
-<h2>Connected calendar accounts</h2>
+<h2 id="connected-calendar-accounts">Connected calendar accounts</h2>
 <p>You can connect Apple Calendar, Google Calendar and Microsoft Outlook. In plain words:</p>
 <ul><li><strong>Apple Calendar</strong> — LP asks macOS for access to your calendars and reads and writes them on your Mac, including Google, Exchange and other accounts you add in System Settings → Internet Accounts. macOS does the syncing; LP itself sends nothing.</li><li><strong>Google and Microsoft</strong> — you click Connect and sign in on Google's or Microsoft's own page, in a window LP asks macOS to keep private. For Google, LP signs in through its own app registration (a public "client ID", no secret) — or yours, if you set one under Advanced; for Microsoft, through your own registration for now (LP's own comes in a later version). LP then reads your calendars and their events, and changes events you edit in LP, by calling Google's or Microsoft's API directly from your Mac. There is no server in between: your sign-in stays in your Mac's Keychain, and the makers of LP never see it or your data.</li><li>LP asks for <strong>the smallest permissions that work</strong>: Google — <em>see your list of calendars</em> and <em>view and edit events</em> (not the permission to change calendars or who they are shared with); Microsoft — <em>calendars</em> and <em>stay signed in</em> (not your profile). Microsoft's calendar permission is broader than LP needs — it would also allow changing calendars and their sharing — because Microsoft has nothing narrower that lets an app edit events; LP only reads and edits events.</li><li><strong>Disconnecting</strong> deletes the tokens from your Keychain and LP's copy of that account's events; for Google, LP also asks Google to end its access.</li></ul>
 <p>Details, risks and how to remove access completely: <a href="connected-accounts.html">docs/CONNECTED_ACCOUNTS.md</a>.</p>
-<h2>Sharing a board</h2>
+<h2 id="sharing-a-board">Sharing a board</h2>
 <p>Sharing is off until you turn it on for a board. When you click <strong>Share Progress</strong>, LP publishes the board's progress page through <strong>your own account</strong> — never through one of LP's:</p>
 <ul><li><strong>In your Google Drive, as a Google Doc</strong> — through the Google account you connected for the calendar, once you allow it (Settings → Sharing → <strong>Allow Google Drive…</strong>). LP asks Google only for the <strong>files it creates</strong> (<code>drive.file</code>): it can't see or change anything else in your Drive.</li><li><strong>On GitHub, as a secret gist</strong> — with a GitHub token you created that can only make gists.</li></ul>
 <p>Either way it's free, and:</p>
 <ul><li>The page contains the board's <strong>title, lists, card titles, due dates, tags, progress and recent activity</strong>. <strong>Card notes are never included.</strong></li><li><strong>Anyone who has the link can open it</strong> — no account needed. It isn't listed or searchable, but it isn't password-protected: a link that is passed on works for whoever gets it.</li><li><strong>A Google Doc</strong> can only be read by others, not edited. LP doesn't put your name or email address on the page, but Google may show the people who open it which Google account owns the Doc — its name, and possibly its email address. If that matters, share from a separate Google account. Its earlier versions stay in the Doc's version history, which only you can see. <strong>Stop Sharing</strong> deletes the Doc, and disconnecting the Google account in Settings → Calendars first deletes the Docs this Mac made or keeps up to date in that Drive.</li><li><strong>A gist</strong> shows <strong>your GitHub username</strong>, and GitHub <strong>keeps earlier versions</strong> of it in its history until you click <strong>Stop Sharing</strong>, which deletes the page and its history. Someone signed in to GitHub can comment on it or fork it. A separate free GitHub account just for sharing keeps your main username off the page.</li><li>Anyone who opened a page can keep a copy; Stop Sharing can't remove those.</li><li>LP doesn't track who opens the page. Google or GitHub hosts it and sees visits like any website (see <a href="cookies.html">Cookies</a>).</li></ul>
 <p>To share without any online service, use <strong>Export Report…</strong>: it saves a self-contained HTML file you can send yourself.</p>
-<h2>Only the data that's needed</h2>
+<h2 id="only-the-data-that-s-needed">Only the data that's needed</h2>
 <ul><li>No analytics, telemetry, crash reporting, advertising or third-party code in LP.</li><li>Calendar: your calendars and their events from a year back to two years ahead (so they're there offline), plus months you open. LP asks Google and Microsoft for only what it shows (title, times, place, notes, link); when it creates an event in Outlook, Microsoft sends the new event back in full, and LP keeps only those fields. Attendees and organisers are never stored.</li><li>Sharing: card notes are left out; nothing is published until you choose to; in Google Drive LP can reach only the files it created.</li><li>Reminders and widgets use what is already on your Mac.</li><li>Logs: LP writes no logs containing your data.</li></ul>
-<h2>Cookies</h2>
+<h2 id="cookies">Cookies</h2>
 <p>LP uses no cookies or tracking of any kind. See the <a href="cookies.html">Cookie Policy</a>.</p>
-<h2>Security</h2>
+<h2 id="security">Security</h2>
 <p>LP is sandboxed by macOS and can only reach the folder you chose and files you pick. Tokens are in the Keychain; connections use HTTPS; sign-in uses PKCE with no secrets in the app; nothing in a note can make LP read or write outside your workspace or run code. See <a href="security.html">SECURITY.md</a>.</p>
-<h2>Your choices</h2>
+<h2 id="your-choices">Your choices</h2>
 <ul><li><strong>Disconnect</strong> an account in <strong>Settings → Calendars</strong> (the Docs this Mac shared from a Google account's Drive are deleted first); <strong>Stop Sharing</strong> a board in its progress panel; <strong>Disconnect</strong> GitHub in <strong>Settings → Sharing</strong>.</li><li><strong>Remove LP's access at the source:</strong> <a href="https://myaccount.google.com/permissions">Google</a> · <a href="https://account.live.com/consent/Manage">Microsoft personal accounts</a> · <a href="https://myapps.microsoft.com">Microsoft work or school</a> · <a href="https://github.com/settings/tokens">GitHub tokens</a>.</li><li><strong>Remove everything LP keeps:</strong> quit LP, delete the app, delete <code>~/Library/Containers/LTF.Local-Productivity/</code> (and, if LP was signed with your team — which keeps widget data there automatically — <code>~/Library/Group Containers/&lt;team ID&gt;.LTF.Local-Productivity/</code>), delete the <code>.lp</code> folder in your workspace, and delete LP's items in Keychain Access (search "Local-Productivity"). Your notes stay as they are.</li></ul>
-<h2>Google API data</h2>
+<h2 id="google-api-data">Google API data</h2>
 <p>LP's use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. Data from Google is used only to show and edit your calendar in LP on your Mac, and to publish the progress pages you choose to share to your own Drive; it is never transferred to anyone else, used for advertising, or read by people.</p>
-<h2>Children</h2>
+<h2 id="children">Children</h2>
 <p>LP is not directed at children and collects no information from anyone.</p>
-<h2>Changes</h2>
+<h2 id="changes">Changes</h2>
 <p>Changes to this policy are recorded in the project's CHANGELOG and its history.</p>
-<h2>Contact</h2>
+<h2 id="contact">Contact</h2>
 <p>Questions: open an issue on the project's GitHub page, or contact the maintainer (LTF-Git-Dev) through GitHub. Please report security problems privately as described in <a href="security.html">SECURITY.md</a>.</p>
+</article></div>
 </main>
-<footer>
-  © 2026 LTF-Git-Dev · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> ·
-  <a href="cookies.html">Cookie Policy</a> · <a href="license.html">MIT License</a>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="./"><img src="icon.png" width="30" height="30" alt=""><span>LP</span></a>
+        <p>A calm Mac app for notes, calendars and project boards, on your own Markdown files.</p>
+      </div>
+      <nav class="footer-col" aria-labelledby="footer-lp"><h2 id="footer-lp">LP</h2><ul>
+        <li><a href="./#features">Features</a></li><li><a href="./#data">Your data</a></li><li><a href="./#get-lp">Get LP</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="footer-policies"><h2 id="footer-policies">Policies</h2><ul>
+        <li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li><li><a href="cookies.html">Cookie Policy</a></li><li><a href="connected-accounts.html">Connected Accounts</a></li><li><a href="security.html">Security</a></li><li><a href="license.html">MIT License</a></li>
+      </ul></nav>
+      <div class="footer-col"><h2>Contact</h2><ul><li><a href="mailto:ltf.dev.supp@gmail.com">ltf.dev.supp@gmail.com</a></li></ul></div>
+    </div>
+    <div class="footer-base"><p>© 2026 LTF-Git-Dev</p><p>LP stands for Local Productivity.</p></div>
+  </div>
 </footer>
 </body>
 </html>

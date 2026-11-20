@@ -3,56 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MIT License — LP</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>MIT License · LP</title>
 <meta name="description" content="LP&#x27;s licence.">
-<link rel="icon" href="icon.png">
-<style>
-:root { color-scheme: light dark; --ink:#1d1d1f; --ink2:#55555c; --ink3:#86868b; --canvas:#ffffff;
-  --panel:#f5f5f7; --line:#e3e3e8; --accent:#0a66d8; }
-@media (prefers-color-scheme: dark) { :root { --ink:#f2f2f4; --ink2:#b4b4bb; --ink3:#8c8c93;
-  --canvas:#161617; --panel:#1f1f21; --line:#333336; --accent:#4c9bff; } }
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--canvas); color: var(--ink); font: 16px/1.6 -apple-system,
-  BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; }
-header, main, footer { max-width: 760px; margin: 0 auto; padding: 0 24px; }
-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 20px;
-  padding-bottom: 20px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
-.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 600; font-size: 17px; }
-.brand:hover { text-decoration: none; }
-nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 14px; } nav a { color: var(--ink2); }
-main { padding-top: 36px; padding-bottom: 48px; }
-h1 { font-size: 34px; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 8px; }
-h2 { font-size: 22px; letter-spacing: -0.01em; margin: 40px 0 10px; }
-h3 { font-size: 18px; margin: 28px 0 8px; } h4 { font-size: 16px; margin: 22px 0 6px; }
-p, li { color: var(--ink); } ul { padding-left: 22px; } li { margin: 6px 0; } li > ul { margin: 6px 0; }
-li p { margin: 6px 0 0; }
-code { font: 0.88em ui-monospace, "SF Mono", Menlo, monospace; background: var(--panel);
-  border: 1px solid var(--line); border-radius: 5px; padding: 1px 5px; }
-.table { overflow-x: auto; margin: 16px 0; }
-table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
-th, td { text-align: left; vertical-align: top; padding: 9px 10px; border-bottom: 1px solid var(--line); }
-th { color: var(--ink2); font-weight: 600; }
-.lead { font-size: 20px; color: var(--ink2); margin: 0 0 28px; }
-.hero { display: flex; align-items: center; gap: 22px; margin-bottom: 8px; }
-.hero img { width: 96px; height: 96px; }
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 24px 0; }
-.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
-.card h3 { margin: 0 0 6px; font-size: 16px; } .card p { margin: 0; color: var(--ink2); font-size: 14.5px; }
-.note { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 4px 20px; margin: 20px 0; }
-pre { white-space: pre-wrap; font: 13.5px/1.55 ui-monospace, "SF Mono", Menlo, monospace; }
-footer { padding-top: 18px; padding-bottom: 40px; border-top: 1px solid var(--line); color: var(--ink3); font-size: 13.5px; }
-footer a { color: var(--ink2); }
-@media (max-width: 540px) { h1 { font-size: 28px; } .hero img { width: 72px; height: 72px; } .lead { font-size: 18px; } }
-</style>
+<link rel="canonical" href="https://ltf-git-dev.github.io/license.html">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0e10" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LP">
+<meta property="og:title" content="MIT License · LP">
+<meta property="og:description" content="LP&#x27;s licence.">
+<meta property="og:url" content="https://ltf-git-dev.github.io/license.html">
+<meta property="og:image" content="https://ltf-git-dev.github.io/icon.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="icon.png" type="image/png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="stylesheet" href="assets/site.css?v=943d316f46">
 </head>
 <body>
-<header>
-  <a class="brand" href="./"><img src="icon.png" alt="" width="28" height="28">LP</a>
-  <nav><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="connected-accounts.html">Connected accounts</a><a href="security.html">Security</a></nav>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="top">
+  <div class="wrap header-row">
+    <a class="brand" href="./"><img src="icon.png" width="30" height="30" alt=""><span>LP</span></a>
+    <nav class="site-nav" aria-label="Main"><a href="./#features">Features</a><a href="./#data">Your data</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a></nav>
+  </div>
 </header>
-<main>
-<h1>MIT License</h1><pre>MIT License
+<main id="main" tabindex="-1">
+<header class="doc-head"><div class="wrap"><h1>MIT License</h1><p class="doc-meta">LP’s licence</p></div></header><div class="wrap doc-layout"><article class="prose"><pre>MIT License
 
 Copyright (c) 2026 LTF-Git-Dev
 
@@ -73,11 +52,46 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-</pre>
+</pre><h2 id="icons-on-this-website">Icons on this website</h2><p>The website’s icons come from <a href="https://phosphoricons.com">Phosphor Icons</a>, under this licence:</p><pre>MIT License
+
+Copyright (c) 2023 Phosphor Icons
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</pre></article></div>
 </main>
-<footer>
-  © 2026 LTF-Git-Dev · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> ·
-  <a href="cookies.html">Cookie Policy</a> · <a href="license.html">MIT License</a>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="./"><img src="icon.png" width="30" height="30" alt=""><span>LP</span></a>
+        <p>A calm Mac app for notes, calendars and project boards, on your own Markdown files.</p>
+      </div>
+      <nav class="footer-col" aria-labelledby="footer-lp"><h2 id="footer-lp">LP</h2><ul>
+        <li><a href="./#features">Features</a></li><li><a href="./#data">Your data</a></li><li><a href="./#get-lp">Get LP</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="footer-policies"><h2 id="footer-policies">Policies</h2><ul>
+        <li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li><li><a href="cookies.html">Cookie Policy</a></li><li><a href="connected-accounts.html">Connected Accounts</a></li><li><a href="security.html">Security</a></li><li><a href="license.html">MIT License</a></li>
+      </ul></nav>
+      <div class="footer-col"><h2>Contact</h2><ul><li><a href="mailto:ltf.dev.supp@gmail.com">ltf.dev.supp@gmail.com</a></li></ul></div>
+    </div>
+    <div class="footer-base"><p>© 2026 LTF-Git-Dev</p><p>LP stands for Local Productivity.</p></div>
+  </div>
 </footer>
 </body>
 </html>

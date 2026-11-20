@@ -3,80 +3,74 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Terms of Use — LP</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Terms of Use · LP</title>
 <meta name="description" content="LP&#x27;s terms of use.">
-<link rel="icon" href="icon.png">
-<style>
-:root { color-scheme: light dark; --ink:#1d1d1f; --ink2:#55555c; --ink3:#86868b; --canvas:#ffffff;
-  --panel:#f5f5f7; --line:#e3e3e8; --accent:#0a66d8; }
-@media (prefers-color-scheme: dark) { :root { --ink:#f2f2f4; --ink2:#b4b4bb; --ink3:#8c8c93;
-  --canvas:#161617; --panel:#1f1f21; --line:#333336; --accent:#4c9bff; } }
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--canvas); color: var(--ink); font: 16px/1.6 -apple-system,
-  BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; }
-header, main, footer { max-width: 760px; margin: 0 auto; padding: 0 24px; }
-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 20px;
-  padding-bottom: 20px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
-.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 600; font-size: 17px; }
-.brand:hover { text-decoration: none; }
-nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 14px; } nav a { color: var(--ink2); }
-main { padding-top: 36px; padding-bottom: 48px; }
-h1 { font-size: 34px; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 8px; }
-h2 { font-size: 22px; letter-spacing: -0.01em; margin: 40px 0 10px; }
-h3 { font-size: 18px; margin: 28px 0 8px; } h4 { font-size: 16px; margin: 22px 0 6px; }
-p, li { color: var(--ink); } ul { padding-left: 22px; } li { margin: 6px 0; } li > ul { margin: 6px 0; }
-li p { margin: 6px 0 0; }
-code { font: 0.88em ui-monospace, "SF Mono", Menlo, monospace; background: var(--panel);
-  border: 1px solid var(--line); border-radius: 5px; padding: 1px 5px; }
-.table { overflow-x: auto; margin: 16px 0; }
-table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
-th, td { text-align: left; vertical-align: top; padding: 9px 10px; border-bottom: 1px solid var(--line); }
-th { color: var(--ink2); font-weight: 600; }
-.lead { font-size: 20px; color: var(--ink2); margin: 0 0 28px; }
-.hero { display: flex; align-items: center; gap: 22px; margin-bottom: 8px; }
-.hero img { width: 96px; height: 96px; }
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 24px 0; }
-.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
-.card h3 { margin: 0 0 6px; font-size: 16px; } .card p { margin: 0; color: var(--ink2); font-size: 14.5px; }
-.note { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 4px 20px; margin: 20px 0; }
-pre { white-space: pre-wrap; font: 13.5px/1.55 ui-monospace, "SF Mono", Menlo, monospace; }
-footer { padding-top: 18px; padding-bottom: 40px; border-top: 1px solid var(--line); color: var(--ink3); font-size: 13.5px; }
-footer a { color: var(--ink2); }
-@media (max-width: 540px) { h1 { font-size: 28px; } .hero img { width: 72px; height: 72px; } .lead { font-size: 18px; } }
-</style>
+<link rel="canonical" href="https://ltf-git-dev.github.io/terms.html">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0e10" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LP">
+<meta property="og:title" content="Terms of Use · LP">
+<meta property="og:description" content="LP&#x27;s terms of use.">
+<meta property="og:url" content="https://ltf-git-dev.github.io/terms.html">
+<meta property="og:image" content="https://ltf-git-dev.github.io/icon.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="icon.png" type="image/png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="stylesheet" href="assets/site.css?v=943d316f46">
 </head>
 <body>
-<header>
-  <a class="brand" href="./"><img src="icon.png" alt="" width="28" height="28">LP</a>
-  <nav><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="connected-accounts.html">Connected accounts</a><a href="security.html">Security</a></nav>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="top">
+  <div class="wrap header-row">
+    <a class="brand" href="./"><img src="icon.png" width="30" height="30" alt=""><span>LP</span></a>
+    <nav class="site-nav" aria-label="Main"><a href="./#features">Features</a><a href="./#data">Your data</a><a href="privacy.html">Privacy</a><a href="terms.html" aria-current="page">Terms</a><a href="security.html">Security</a></nav>
+  </div>
 </header>
-<main>
-<h1>Terms of Use</h1>
-<p><em>Last updated: 20 November 2026</em></p>
+<main id="main" tabindex="-1">
+<header class="doc-head"><div class="wrap"><h1>Terms of Use</h1><p class="doc-meta">Last updated: 20 November 2026</p></div></header>
+<div class="wrap doc-layout has-toc"><nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li><a href="#1-lp-is-free-software-that-runs-on-your-mac">1. LP is free software that runs on your Mac</a></li><li><a href="#2-your-notes-are-yours">2. Your notes are yours</a></li><li><a href="#3-services-you-connect">3. Services you connect</a></li><li><a href="#4-sharing-is-your-choice-and-your-responsibility">4. Sharing is your choice and your responsibility</a></li><li><a href="#5-no-warranty">5. No warranty</a></li><li><a href="#6-betas">6. Betas</a></li><li><a href="#7-contributions">7. Contributions</a></li><li><a href="#8-names-and-trademarks">8. Names and trademarks</a></li><li><a href="#9-changes">9. Changes</a></li></ol></nav><article class="prose">
 <p>These terms explain what you can expect from LP and what LP expects from you. The software itself is licensed under the <a href="license.html">MIT License</a>; if anything here seems to conflict with it, the license wins.</p>
-<h2>1. LP is free software that runs on your Mac</h2>
+<h2 id="1-lp-is-free-software-that-runs-on-your-mac">1. LP is free software that runs on your Mac</h2>
 <p>LP costs nothing, needs no account and has no subscription. It is open-source software you run on your own Mac; nobody operates a service on your behalf. You may use, copy, change and share it under the MIT License.</p>
-<h2>2. Your notes are yours</h2>
+<h2 id="2-your-notes-are-yours">2. Your notes are yours</h2>
 <p>You own everything you write. LP stores it as Markdown files in a folder you choose and claims no rights to it. You are responsible for keeping backups (for example with Time Machine) — LP takes great care with your files, but no software can promise that nothing ever goes wrong.</p>
-<h2>3. Services you connect</h2>
+<h2 id="3-services-you-connect">3. Services you connect</h2>
 <p>LP can connect to services that belong to other companies: Apple Calendar (through macOS), Google Calendar and Google Drive, Microsoft Outlook and GitHub. You connect them yourself, with your own accounts (through LP's app registration or one of your own), and their own terms apply to how you use them: <a href="https://developers.google.com/terms">Google APIs Terms of Service</a> · <a href="https://learn.microsoft.com/legal/microsoft-apis/terms-of-use">Microsoft APIs Terms of Use</a> · <a href="https://docs.github.com/site-policy/github-terms/github-terms-of-service">GitHub Terms of Service</a> · <a href="https://www.apple.com/legal/internet-services/itunes/">Apple Media Services Terms</a>. Using them for LP is free within their usual limits; if a service ever changes that, it is between you and that service.</p>
-<h2>4. Sharing is your choice and your responsibility</h2>
+<h2 id="4-sharing-is-your-choice-and-your-responsibility">4. Sharing is your choice and your responsibility</h2>
 <p>A shared progress page can be opened by anyone with its link. Share only what you have the right to share, and nothing you wouldn't want others to see — card titles, tags and activity are on the page; card notes are not. Shared pages are hosted by Google (in your Drive) or GitHub, so their terms and acceptable-use policies apply to them. <strong>Stop Sharing</strong> deletes the page.</p>
-<h2>5. No warranty</h2>
+<h2 id="5-no-warranty">5. No warranty</h2>
 <p>LP is provided "as is", without warranty of any kind, as the MIT License says. Its makers are not liable for any claim, damages or other liability arising from the software or its use, including lost data, missed reminders or calendar changes.</p>
-<h2>6. Betas</h2>
+<h2 id="6-betas">6. Betas</h2>
 <p>Versions marked <strong>Pre-release</strong> on the Releases page are betas: published so the maintainer and anyone helping can test them before they become an official version. They may have problems the official version doesn't — use them only if you want to help test, and keep your notes backed up as always. The newest official version is the one marked <strong>Latest</strong>.</p>
-<h2>7. Contributions</h2>
+<h2 id="7-contributions">7. Contributions</h2>
 <p>When the project is public, contributions you send (code, documentation, translations) are accepted under the MIT License.</p>
-<h2>8. Names and trademarks</h2>
+<h2 id="8-names-and-trademarks">8. Names and trademarks</h2>
 <p>LP isn't affiliated with or endorsed by Apple, Google, Microsoft, GitHub or Obsidian. Apple, macOS, iCloud and SF Symbols are trademarks of Apple Inc.; Google Calendar is a trademark of Google LLC; Microsoft and Outlook are trademarks of Microsoft Corporation; GitHub is a trademark of GitHub, Inc.; Obsidian is a trademark of Dynalist Inc. They are named only to describe what LP works with.</p>
-<h2>9. Changes</h2>
+<h2 id="9-changes">9. Changes</h2>
 <p>If these terms change, the change is recorded in the CHANGELOG. Using a newer version of LP means accepting its terms.</p>
+</article></div>
 </main>
-<footer>
-  © 2026 LTF-Git-Dev · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> ·
-  <a href="cookies.html">Cookie Policy</a> · <a href="license.html">MIT License</a>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="./"><img src="icon.png" width="30" height="30" alt=""><span>LP</span></a>
+        <p>A calm Mac app for notes, calendars and project boards, on your own Markdown files.</p>
+      </div>
+      <nav class="footer-col" aria-labelledby="footer-lp"><h2 id="footer-lp">LP</h2><ul>
+        <li><a href="./#features">Features</a></li><li><a href="./#data">Your data</a></li><li><a href="./#get-lp">Get LP</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="footer-policies"><h2 id="footer-policies">Policies</h2><ul>
+        <li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li><li><a href="cookies.html">Cookie Policy</a></li><li><a href="connected-accounts.html">Connected Accounts</a></li><li><a href="security.html">Security</a></li><li><a href="license.html">MIT License</a></li>
+      </ul></nav>
+      <div class="footer-col"><h2>Contact</h2><ul><li><a href="mailto:ltf.dev.supp@gmail.com">ltf.dev.supp@gmail.com</a></li></ul></div>
+    </div>
+    <div class="footer-base"><p>© 2026 LTF-Git-Dev</p><p>LP stands for Local Productivity.</p></div>
+  </div>
 </footer>
 </body>
 </html>

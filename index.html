@@ -3,98 +3,160 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LP — notes, calendar and boards on your Mac</title>
-<meta name="description" content="LP is a calm Mac app for notes, calendars and project boards on your own Markdown files.">
-<link rel="icon" href="icon.png">
-<style>
-:root { color-scheme: light dark; --ink:#1d1d1f; --ink2:#55555c; --ink3:#86868b; --canvas:#ffffff;
-  --panel:#f5f5f7; --line:#e3e3e8; --accent:#0a66d8; }
-@media (prefers-color-scheme: dark) { :root { --ink:#f2f2f4; --ink2:#b4b4bb; --ink3:#8c8c93;
-  --canvas:#161617; --panel:#1f1f21; --line:#333336; --accent:#4c9bff; } }
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--canvas); color: var(--ink); font: 16px/1.6 -apple-system,
-  BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; }
-header, main, footer { max-width: 760px; margin: 0 auto; padding: 0 24px; }
-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 20px;
-  padding-bottom: 20px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
-.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 600; font-size: 17px; }
-.brand:hover { text-decoration: none; }
-nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 14px; } nav a { color: var(--ink2); }
-main { padding-top: 36px; padding-bottom: 48px; }
-h1 { font-size: 34px; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 8px; }
-h2 { font-size: 22px; letter-spacing: -0.01em; margin: 40px 0 10px; }
-h3 { font-size: 18px; margin: 28px 0 8px; } h4 { font-size: 16px; margin: 22px 0 6px; }
-p, li { color: var(--ink); } ul { padding-left: 22px; } li { margin: 6px 0; } li > ul { margin: 6px 0; }
-li p { margin: 6px 0 0; }
-code { font: 0.88em ui-monospace, "SF Mono", Menlo, monospace; background: var(--panel);
-  border: 1px solid var(--line); border-radius: 5px; padding: 1px 5px; }
-.table { overflow-x: auto; margin: 16px 0; }
-table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
-th, td { text-align: left; vertical-align: top; padding: 9px 10px; border-bottom: 1px solid var(--line); }
-th { color: var(--ink2); font-weight: 600; }
-.lead { font-size: 20px; color: var(--ink2); margin: 0 0 28px; }
-.hero { display: flex; align-items: center; gap: 22px; margin-bottom: 8px; }
-.hero img { width: 96px; height: 96px; }
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 24px 0; }
-.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
-.card h3 { margin: 0 0 6px; font-size: 16px; } .card p { margin: 0; color: var(--ink2); font-size: 14.5px; }
-.note { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 4px 20px; margin: 20px 0; }
-pre { white-space: pre-wrap; font: 13.5px/1.55 ui-monospace, "SF Mono", Menlo, monospace; }
-footer { padding-top: 18px; padding-bottom: 40px; border-top: 1px solid var(--line); color: var(--ink3); font-size: 13.5px; }
-footer a { color: var(--ink2); }
-@media (max-width: 540px) { h1 { font-size: 28px; } .hero img { width: 72px; height: 72px; } .lead { font-size: 18px; } }
-</style>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>LP: notes, calendar and boards on your Mac</title>
+<meta name="description" content="LP is a calm Mac app for notes, calendars and project boards, on plain Markdown files in a folder you choose. No account, no servers, no tracking.">
+<link rel="canonical" href="https://ltf-git-dev.github.io/">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0e10" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LP">
+<meta property="og:title" content="LP: notes, calendar and boards on your Mac">
+<meta property="og:description" content="LP is a calm Mac app for notes, calendars and project boards, on plain Markdown files in a folder you choose. No account, no servers, no tracking.">
+<meta property="og:url" content="https://ltf-git-dev.github.io/">
+<meta property="og:image" content="https://ltf-git-dev.github.io/icon.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="icon.png" type="image/png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="stylesheet" href="assets/site.css?v=943d316f46">
 </head>
 <body>
-<header>
-  <a class="brand" href="./"><img src="icon.png" alt="" width="28" height="28">LP</a>
-  <nav><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="connected-accounts.html">Connected accounts</a><a href="security.html">Security</a></nav>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="top">
+  <div class="wrap header-row">
+    <a class="brand" href="#top"><img src="icon.png" width="30" height="30" alt=""><span>LP</span></a>
+    <nav class="site-nav" aria-label="Main"><a href="#features">Features</a><a href="#data">Your data</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a></nav>
+  </div>
 </header>
-<main>
-<div class="hero"><img src="icon.png" alt="LP's app icon">
-<div><h1>LP</h1><p class="lead">A calm Mac app for your notes, your calendar and your project boards — on plain
-Markdown files in a folder you choose.</p></div></div>
+<main id="main" tabindex="-1">
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-copy">
+    <img class="hero-icon" src="icon.png" width="92" height="92" alt="LP">
+    <h1 id="hero-title">Notes, calendar and boards in one calm Mac app.</h1>
+    <p class="hero-lead">LP keeps every page in plain Markdown files, in a folder you choose. No account, no servers, no tracking.</p>
+    <div class="actions">
+      <a class="button button-primary" href="#features">Explore LP<svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
+      <a class="button button-ghost" href="#data">Your data</a>
+    </div>
+  </div>
+  <div class="wrap hero-shot"><picture><source type="image/avif" media="(prefers-color-scheme: dark)" srcset="assets/shots/home-dark.avif"><source type="image/avif" srcset="assets/shots/home-light.avif"><img src="assets/shots/home-light.jpg" width="2240" height="1400" alt="LP&#x27;s Home screen: a greeting with today&#x27;s date, buttons for a new page, today&#x27;s note, a new board and search, the pages you worked on recently, and your open tasks." fetchpriority="high"></picture></div>
+</section>
 
-<div class="cards">
-<div class="card"><h3>Notes</h3><p>A clean editor over your own Markdown files, compatible with Obsidian. Nothing is
-uploaded: the files stay where you keep them.</p></div>
-<div class="card"><h3>Calendar</h3><p>Your Apple, Google and Outlook calendars next to your notes, two-way: events you
-create or change in LP are saved back to the calendar they belong to.</p></div>
-<div class="card"><h3>Boards</h3><p>Kanban boards stored as Markdown, with progress tracking — and, if you choose, a
-read-only progress page you can share with a link.</p></div>
-</div>
+<section class="section features" id="features" aria-labelledby="features-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="features-title">Write, plan and track in the same window.</h2>
+      <p>Pages and boards are plain files you own, and your calendars sit right next to them.</p>
+    </div>
+    <div class="bento">
+      <article class="tile tile-sky span-7 reveal">
+        <span class="tile-icon"><svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M229.66,58.34l-32-32a8,8,0,0,0-11.32,0l-96,96A8,8,0,0,0,88,128v32a8,8,0,0,0,8,8h32a8,8,0,0,0,5.66-2.34l96-96A8,8,0,0,0,229.66,58.34ZM124.69,152H104V131.31l64-64L188.69,88ZM200,76.69,179.31,56,192,43.31,212.69,64ZM224,128v80a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32h80a8,8,0,0,1,0,16H48V208H208V128a8,8,0,0,1,16,0Z"/></svg></span>
+        <h3>Notes that are just files</h3>
+        <p>A clean editor over your own Markdown files, compatible with Obsidian. Nothing is uploaded: the files stay where you keep them.</p>
+        <div class="tile-media bleed"><picture><source type="image/avif" media="(prefers-color-scheme: dark)" srcset="assets/shots/notes-dark.avif"><source type="image/avif" srcset="assets/shots/notes-light.avif"><img src="assets/shots/notes-light.jpg" width="1360" height="850" alt="A page in LP&#x27;s editor: a heading, a numbered list of goals and this week&#x27;s to-dos with their due dates." loading="lazy" decoding="async"></picture></div>
+      </article><article class="tile tile-mint span-5 reveal">
+        <span class="tile-icon"><svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"/></svg></span>
+        <h3>Every calendar, two-way</h3>
+        <p>Your Apple, Google and Outlook calendars next to your notes. Events you create or change in LP are saved back to the calendar they belong to.</p>
+        <div class="tile-media bleed"><picture><source type="image/avif" media="(prefers-color-scheme: dark)" srcset="assets/shots/calendar-dark.avif"><source type="image/avif" srcset="assets/shots/calendar-light.avif"><img src="assets/shots/calendar-light.jpg" width="960" height="849" alt="LP&#x27;s calendar: a month of events with today&#x27;s daily note, and a Today panel with today&#x27;s events and what&#x27;s due." loading="lazy" decoding="async"></picture></div>
+      </article><article class="tile tile-lilac span-5 reveal">
+        <span class="tile-icon"><svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0V156.69l50.34-50.35a8,8,0,0,1,11.32,0L128,132.69,180.69,80H160a8,8,0,0,1,0-16h40a8,8,0,0,1,8,8v40a8,8,0,0,1-16,0V91.31l-58.34,58.35a8,8,0,0,1-11.32,0L96,123.31l-56,56V200H224A8,8,0,0,1,232,208Z"/></svg></span>
+        <h3>Progress at a glance</h3>
+        <p>Each board shows what’s done, what’s overdue and how long cards take to finish.</p>
+        <div class="tile-media float"><picture><source type="image/avif" media="(prefers-color-scheme: dark)" srcset="assets/shots/progress-dark.avif"><source type="image/avif" srcset="assets/shots/progress-light.avif"><img class="shot-progress" src="assets/shots/progress-light.jpg" width="630" height="638" alt="A board&#x27;s progress panel: 33% done, the cards in each list, how many are overdue or due soon, how many were done this week and how long cards take to finish." loading="lazy" decoding="async"></picture></div>
+      </article><article class="tile tile-rose span-7 reveal">
+        <span class="tile-icon"><svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M216,48H40a8,8,0,0,0-8,8V208a16,16,0,0,0,16,16H88a16,16,0,0,0,16-16V160h48v16a16,16,0,0,0,16,16h40a16,16,0,0,0,16-16V56A8,8,0,0,0,216,48ZM88,208H48V128H88Zm0-96H48V64H88Zm64,32H104V64h48Zm56,32H168V128h40Zm0-64H168V64h40Z"/></svg></span>
+        <h3>Boards in plain Markdown</h3>
+        <p>Kanban boards stored as Markdown files. When you want to, share a read-only progress page with a link.</p>
+        <div class="tile-media bleed"><picture><source type="image/avif" media="(prefers-color-scheme: dark)" srcset="assets/shots/board-dark.avif"><source type="image/avif" srcset="assets/shots/board-light.avif"><img src="assets/shots/board-light.jpg" width="1360" height="824" alt="A board in LP: Backlog, In progress and Review lists of cards with due dates and labels, under the board&#x27;s progress bar." loading="lazy" decoding="async"></picture></div>
+      </article><article class="tile tile-sand span-6 reveal">
+        <span class="tile-icon"><svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M224,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48Zm0,144H32V64H224V192Zm-16-64a8,8,0,0,1-8,8H56a8,8,0,0,1,0-16H200A8,8,0,0,1,208,128Zm0-32a8,8,0,0,1-8,8H56a8,8,0,0,1,0-16H200A8,8,0,0,1,208,96ZM72,160a8,8,0,0,1-8,8H56a8,8,0,0,1,0-16h8A8,8,0,0,1,72,160Zm96,0a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,160Zm40,0a8,8,0,0,1-8,8h-8a8,8,0,0,1,0-16h8A8,8,0,0,1,208,160Z"/></svg></span>
+        <h3>Quick from the keyboard</h3>
+        <p>Type / to add headings, to-do lists and more. Press ⌘K to find any page.</p>
+        <div class="tile-media float"><picture><source type="image/avif" media="(prefers-color-scheme: dark)" srcset="assets/shots/slash-dark.avif"><source type="image/avif" srcset="assets/shots/slash-light.avif"><img class="shot-slash" src="assets/shots/slash-light.jpg" width="568" height="700" alt="The menu that opens when you type a slash in LP&#x27;s editor: text, three sizes of heading, a to-do list, a bulleted list and a numbered list." loading="lazy" decoding="async"></picture></div>
+      </article><article class="tile tile-slate span-6 reveal">
+        <span class="tile-icon"><svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M104,40H56A16,16,0,0,0,40,56v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,104,40Zm0,64H56V56h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,64H152V56h48v48Zm-96,32H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm0,64H56V152h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Zm0,64H152V152h48v48Z"/></svg></span>
+        <h3>Today, on your desktop</h3>
+        <p>Widgets show what’s due today and how a board is going, without opening LP.</p>
+        <div class="tile-media float"><picture><source type="image/avif" media="(prefers-color-scheme: dark)" srcset="assets/shots/widget-dark.avif"><source type="image/avif" srcset="assets/shots/widget-light.avif"><img class="shot-widget" src="assets/shots/widget-light.jpg" width="724" height="336" alt="LP&#x27;s Today widget: the date, today&#x27;s tasks with their times, how many are due today and one overdue." loading="lazy" decoding="async"></picture></div>
+      </article>
+    </div>
+  </div>
+</section>
 
-<h2>How LP uses your Google and Microsoft data</h2>
-<p>LP connects to Google or Microsoft only when you click <strong>Connect</strong> and approve on their own page. Every
-request goes straight from your Mac to them: LP has <strong>no servers, no accounts, no analytics and no ads</strong>, and
-the people who make LP never receive your data or your sign-in, which stays in your Mac's Keychain.</p>
-<ul>
-<li><strong>Google Calendar</strong> — <code>calendar.calendarlist.readonly</code> to show the list of your calendars,
-and <code>calendar.events</code> to show your events in LP and to create, change or delete events when you do so in LP.
-LP keeps a copy of a year back to two years ahead on your Mac, so your calendar works offline.</li>
-<li><strong>Google Drive</strong> (only if you choose to share a board there) — <code>drive.file</code>: LP creates,
-updates and deletes the progress pages you share, as Google Docs in your own Drive. It can't see or change any other
-file in your Drive.</li>
-<li><strong>Microsoft Outlook</strong> — <code>Calendars.ReadWrite</code> and <code>offline_access</code>, to show and
-edit your calendars' events in LP and stay connected.</li>
-</ul>
-<div class="note"><p>LP's use and transfer of information received from Google APIs adheres to the
-<a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
-including the Limited Use requirements. Your data is used only to show and edit your calendar in LP on your Mac and to
-publish the board pages you choose to share; it is never sold, never transferred to anyone else, never used for
-advertising, and never read by people.</p></div>
-<p>Disconnecting an account in LP removes LP's copy and asks Google to end LP's access; you can also remove LP's
-access any time in your Google or Microsoft account settings. Read the <a href="privacy.html">Privacy Policy</a>,
-the <a href="terms.html">Terms of Use</a> and <a href="connected-accounts.html">what each connected account allows</a>.</p>
+<section class="section privacy" aria-labelledby="privacy-title">
+  <div class="wrap privacy-grid">
+    <div>
+      <h2 id="privacy-title">Your files stay yours.</h2>
+      <p class="lead">LP is an app, not a service. Your notes, boards and calendar copy live on your Mac, and none of it
+      is sent to the people who make LP.</p>
+    </div>
+    <div class="facts"><div class="fact tile-sky"><span class="tile-icon"><svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M216,72H130.67L102.93,51.2a16.12,16.12,0,0,0-9.6-3.2H40A16,16,0,0,0,24,64V200a16,16,0,0,0,16,16H216.89A15.13,15.13,0,0,0,232,200.89V88A16,16,0,0,0,216,72Zm0,128H40V64H93.33L123.2,86.4A8,8,0,0,0,128,88h88Z"/></svg></span><h3>Plain files</h3><p>Every page and board is a Markdown file in a folder you choose. Any text editor can open it.</p></div><div class="fact tile-mint"><span class="tile-icon"><svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M53.92,34.62A8,8,0,1,0,42.08,45.38L81.32,88.55l-.06.12A65,65,0,0,0,72,88a64,64,0,0,0,0,128h88a87.34,87.34,0,0,0,31.8-5.93l10.28,11.31a8,8,0,1,0,11.84-10.76ZM160,200H72a48,48,0,0,1,0-96c1.1,0,2.2,0,3.3.12A88.4,88.4,0,0,0,72,128a8,8,0,0,0,16,0,72.25,72.25,0,0,1,5.06-26.54l87,95.7A71.66,71.66,0,0,1,160,200Zm88-72a87.89,87.89,0,0,1-22.35,58.61A8,8,0,0,1,213.71,176,72,72,0,0,0,117.37,70a8,8,0,0,1-9.48-12.89A88,88,0,0,1,248,128Z"/></svg></span><h3>No servers, no account</h3><p>There’s nothing to sign up for. LP talks to Google or Microsoft only when you connect them, straight from your Mac.</p></div><div class="fact tile-sand"><span class="tile-icon"><svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M216.57,39.43A80,80,0,0,0,83.91,120.78L28.69,176A15.86,15.86,0,0,0,24,187.31V216a16,16,0,0,0,16,16H72a8,8,0,0,0,8-8V208H96a8,8,0,0,0,8-8V184h16a8,8,0,0,0,5.66-2.34l9.56-9.57A79.73,79.73,0,0,0,160,176h.1A80,80,0,0,0,216.57,39.43ZM224,98.1c-1.09,34.09-29.75,61.86-63.89,61.9H160a63.7,63.7,0,0,1-23.65-4.51,8,8,0,0,0-8.84,1.68L116.69,168H96a8,8,0,0,0-8,8v16H72a8,8,0,0,0-8,8v16H40V187.31l58.83-58.82a8,8,0,0,0,1.68-8.84A63.72,63.72,0,0,1,96,95.92c0-34.14,27.81-62.8,61.9-63.89A64,64,0,0,1,224,98.1ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/></svg></span><h3>Sign-ins stay on your Mac</h3><p>A connected account’s sign-in is kept in your Mac’s Keychain. The people who make LP never see it.</p></div><div class="fact tile-rose"><span class="tile-icon"><svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M53.92,34.62A8,8,0,1,0,42.08,45.38L61.32,66.55C25,88.84,9.38,123.2,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208a127.11,127.11,0,0,0,52.07-10.83l22,24.21a8,8,0,1,0,11.84-10.76Zm47.33,75.84,41.67,45.85a32,32,0,0,1-41.67-45.85ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.16,133.16,0,0,1,25,128c4.69-8.79,19.66-33.39,47.35-49.38l18,19.75a48,48,0,0,0,63.66,70l14.73,16.2A112,112,0,0,1,128,192Zm6-95.43a8,8,0,0,1,3-15.72,48.16,48.16,0,0,1,38.77,42.64,8,8,0,0,1-7.22,8.71,6.39,6.39,0,0,1-.75,0,8,8,0,0,1-8-7.26A32.09,32.09,0,0,0,134,96.57Zm113.28,34.69c-.42.94-10.55,23.37-33.36,43.8a8,8,0,1,1-10.67-11.92A132.77,132.77,0,0,0,231.05,128a133.15,133.15,0,0,0-23.12-30.77C185.67,75.19,158.78,64,128,64a118.37,118.37,0,0,0-19.36,1.57A8,8,0,1,1,106,49.79,134,134,0,0,1,128,48c34.88,0,66.57,13.26,91.66,38.35,18.83,18.83,27.3,37.62,27.65,38.41A8,8,0,0,1,247.31,131.26Z"/></svg></span><h3>No tracking</h3><p>No analytics, no telemetry and no ads. Nothing about how you use LP is sent anywhere.</p></div></div>
+  </div>
+</section>
 
-<h2>Get LP</h2>
-<p>LP runs on macOS 15 and later. It is free, and its code is under the MIT License.</p>
-<p>Questions or problems: <a href="mailto:ltf.dev.supp@gmail.com">ltf.dev.supp@gmail.com</a>.</p>
+<section class="section data" id="data" aria-labelledby="data-title">
+  <div class="wrap">
+    <h2 id="data-title">How LP uses your Google and Microsoft data</h2>
+    <p class="lead">LP connects to Google or Microsoft only when you click <strong>Connect</strong> and approve on their own
+    page. Every request goes straight from your Mac to them: LP has <strong>no servers, no accounts, no analytics and no
+    ads</strong>, and the people who make LP never receive your data or your sign-in, which stays in your Mac’s Keychain.</p>
+    <div class="ledger">
+        <div class="ledger-row">
+          <div class="ledger-name"><h3>Google Calendar</h3></div>
+          <dl class="scopes"><div><dt><code>calendar.calendarlist.readonly</code></dt><dd>Shows the list of your calendars.</dd></div><div><dt><code>calendar.events</code></dt><dd>Shows your events in LP, and creates, changes or deletes events when you do so in LP.</dd></div></dl><p class="ledger-note">LP keeps a copy of a year back to two years ahead on your Mac, so your calendar works offline.</p>
+        </div><div class="ledger-row">
+          <div class="ledger-name"><h3>Google Drive</h3><p>Only if you choose to share a board there</p></div>
+          <dl class="scopes"><div><dt><code>drive.file</code></dt><dd>Creates, updates and deletes the progress pages you share, as Google Docs in your own Drive. It can’t see or change any other file in your Drive.</dd></div></dl>
+        </div><div class="ledger-row">
+          <div class="ledger-name"><h3>Microsoft Outlook</h3></div>
+          <dl class="scopes"><div><dt><code>Calendars.ReadWrite</code></dt><dd>Shows and edits your calendars’ events in LP.</dd></div><div><dt><code>offline_access</code></dt><dd>Keeps LP connected after you sign in.</dd></div></dl>
+        </div>
+    </div>
+    <div class="callout"><svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"/></svg><p>LP’s use and transfer of information received from Google APIs adheres to the
+    <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+    including the Limited Use requirements. Your data is used only to show and edit your calendar in LP on your Mac and to
+    publish the board pages you choose to share; it is never sold, never transferred to anyone else, never used for
+    advertising, and never read by people.</p></div>
+    <p class="after">Disconnecting an account in LP removes LP’s copy and asks Google to end LP’s access; you can also
+    remove LP’s access any time in your Google or Microsoft account settings.</p>
+    <p class="link-row"><a href="privacy.html">Privacy Policy<svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a><a href="terms.html">Terms of Use<svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a><a href="connected-accounts.html">What each connected account allows<svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a></p>
+  </div>
+</section>
+
+<section class="section get" id="get-lp" aria-labelledby="get-title">
+  <div class="wrap">
+    <div class="band">
+      <img src="icon.png" width="104" height="104" alt="">
+      <div>
+        <h2 id="get-title">Get LP</h2>
+        <p>LP runs on macOS 15 and later. It is free, and its code is under the <a href="license.html">MIT License</a>.</p>
+        <p>Questions or problems? Write to <span class="nowrap">ltf.dev.supp@gmail.com</span>.</p>
+      </div>
+      <a class="button button-primary" href="mailto:ltf.dev.supp@gmail.com"><svg class="icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"/></svg>Email support</a>
+    </div>
+  </div>
+</section>
 </main>
-<footer>
-  © 2026 LTF-Git-Dev · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> ·
-  <a href="cookies.html">Cookie Policy</a> · <a href="license.html">MIT License</a>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top"><img src="icon.png" width="30" height="30" alt=""><span>LP</span></a>
+        <p>A calm Mac app for notes, calendars and project boards, on your own Markdown files.</p>
+      </div>
+      <nav class="footer-col" aria-labelledby="footer-lp"><h2 id="footer-lp">LP</h2><ul>
+        <li><a href="#features">Features</a></li><li><a href="#data">Your data</a></li><li><a href="#get-lp">Get LP</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="footer-policies"><h2 id="footer-policies">Policies</h2><ul>
+        <li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li><li><a href="cookies.html">Cookie Policy</a></li><li><a href="connected-accounts.html">Connected Accounts</a></li><li><a href="security.html">Security</a></li><li><a href="license.html">MIT License</a></li>
+      </ul></nav>
+      <div class="footer-col"><h2>Contact</h2><ul><li><a href="mailto:ltf.dev.supp@gmail.com">ltf.dev.supp@gmail.com</a></li></ul></div>
+    </div>
+    <div class="footer-base"><p>© 2026 LTF-Git-Dev</p><p>LP stands for Local Productivity.</p></div>
+  </div>
 </footer>
 </body>
 </html>
